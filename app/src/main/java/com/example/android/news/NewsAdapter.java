@@ -41,8 +41,6 @@ public class NewsAdapter extends ArrayAdapter<News> {
         TextView datePublishedView = (TextView) convertView.findViewById(R.id.date_published);
         datePublishedView.setText(currentNews.getDatePublished());
 
-        Log.i("TEST", formateDate("2017-02-06T07:00:20Z").toString());
-
         return convertView;
     }
 
