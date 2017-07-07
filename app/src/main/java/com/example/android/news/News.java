@@ -6,10 +6,10 @@ package com.example.android.news;
 
 public class News {
 
-    private String mTitle;
-    private String mSectionName;
-    private String mDatePublished;
-    private String mUrl;
+    private final String mTitle;
+    private final String mSectionName;
+    private final String mDatePublished;
+    private final String mUrl;
 
     public News(String title, String sectionName, String datePublished, String url) {
         this.mTitle = title;

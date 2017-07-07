@@ -2,6 +2,6 @@
 <resources>
     <dimen name="item_padding">16dp</dimen>
     <dimen name="item_height">120dp</dimen>
-    <dimen name="text_size_big">20dp</dimen>
-    <dimen name="text_size_small">16dp</dimen>
+    <dimen name="text_size_big">20sp</dimen>
+    <dimen name="text_size_small">16sp</dimen>
 </resources>
