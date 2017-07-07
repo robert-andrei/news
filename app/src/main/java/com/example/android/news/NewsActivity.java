@@ -7,9 +7,8 @@ import android.content.Loader;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -18,7 +17,6 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
-
 
 public class NewsActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<List<News>> {
 
@@ -35,7 +33,6 @@ public class NewsActivity extends AppCompatActivity implements LoaderManager.Loa
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        Log.i(LOG_TAG + "TEST", "OnCreate");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_news);
 
@@ -81,14 +78,12 @@ public class NewsActivity extends AppCompatActivity implements LoaderManager.Loa
     @Override
     public Loader<List<News>> onCreateLoader(int id, Bundle args) {
 
-        Log.i(LOG_TAG + "TEST", "OnCreateLoader");
         return new NewsLoader(this, GUARDIAN_REQUEST_URL);
     }
 
     @Override
     public void onLoadFinished(Loader<List<News>> loader, List<News> news) {
 
-        Log.i(LOG_TAG + "TEST", "OnLoadFinished");
         mEmptyStateTextView.setText(getString(R.string.no_news));
 
         View loadingIndicator = findViewById(R.id.loading_indicator);

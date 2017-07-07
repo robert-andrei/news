@@ -2,31 +2,40 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="?android:attr/listPreferredItemHeight"
-    android:paddingStart="16dp"
-    android:paddingLeft="16dp"
-    android:paddingRight="16dp"
-    android:paddingEnd="16dp" >
-
-    <TextView
-        android:id="@+id/title"
-        android:layout_weight="1"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:text="Theresa May rules out participating in TV debates before election"/>
+    android:layout_height="@dimen/item_height"
+    android:paddingStart="@dimen/item_padding"
+    android:paddingLeft="@dimen/item_padding"
+    android:paddingRight="@dimen/item_padding"
+    android:paddingEnd="@dimen/item_padding"
+    android:background="@color/background">
 
     <TextView
         android:id="@+id/section_name"
-        android:layout_weight="1"
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:text="Politics"/>
+        android:layout_height="wrap_content"
+        android:text="Politics"
+        android:textSize="@dimen/text_size_small"
+        android:textColor="@color/textColor"/>
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Theresa May rules out participating in TV debates before election"
+        android:maxLines="3"
+        android:textSize="@dimen/text_size_big"
+        android:textStyle="bold"
+        android:textColor="@color/textColor"/>
+
 
     <TextView
         android:id="@+id/date_published"
         android:layout_weight="1"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:text="2017-02-06T07:00:20Z"/>
+        android:gravity="bottom"
+        android:layout_gravity="end"
+        android:text="2017-02-06T07:00:20Z"
+        android:textSize="@dimen/text_size_small"
+        android:textColor="@color/textColor"/>
 
 </LinearLayout>

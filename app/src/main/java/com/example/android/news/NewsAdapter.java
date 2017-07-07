@@ -1,16 +1,12 @@
 package com.example.android.news;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -34,27 +30,22 @@ public class NewsAdapter extends ArrayAdapter<News> {
 
         TextView titleView = (TextView) convertView.findViewById(R.id.title);
         titleView.setText(currentNews.getTitle());
+        titleView.setSelected(true);
 
         TextView sectionNameView = (TextView) convertView.findViewById(R.id.section_name);
         sectionNameView.setText(currentNews.getSectionName());
 
         TextView datePublishedView = (TextView) convertView.findViewById(R.id.date_published);
-        datePublishedView.setText(currentNews.getDatePublished());
+        datePublishedView.setText(formatDate(currentNews.getDatePublished()));
 
         return convertView;
     }
 
-    private Date formateDate (String stringDate) {
+    private String formatDate (String stringDate) {
 
-        SimpleDateFormat df = new SimpleDateFormat("MMM dd, yyyy");
-        Date date;
-        try {
-            date = df.parse(stringDate);
-        } catch (ParseException e) {
-            Log.e("NewsAdapter", "Error parsing date");
-            return null;
-        }
+        String formattedDate = stringDate.substring(0, stringDate.indexOf('T')) + ", " +
+                stringDate.substring(stringDate.indexOf('T') + 1, stringDate.length() - 1);
 
-        return date;
+        return formattedDate;
     }
 }
